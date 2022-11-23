@@ -1,0 +1,55 @@
+
+
+<h1>Admin Queue</h1>
+
+
+
+<div class = "logo" >
+       <%= image_tag("nitlogo.png", width:'50px',height: '50px' ) %>
+
+  </div>
+
+
+
+
+<form class="d-flex" method="GET" action= "/search">
+ <input class="form-control me-2" type="search" placeholder="Search for an item " aria-label ="Search" name ="query" >
+ <button class="btn btn-danger" type="submit"> Search </button>
+
+</form> 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<% @posts.each do |post| %>
+
+</br>
+
+
+<div class="card" style="width: 70rem;">
+
+<h5 class="card-header"><%=post.title %></h5>
+
+      <div class = "card card-body text-white bg-dark mb-3 bg-secondary.bg-gradient border border-info">
+
+
+    <p> <%= post.date %></p>
+    <p> <%= post.name %></p>
+    <p> <%= post.nmail %></p>
+
+    <%= link_to "Read More", post_path(post), :class => 'btn btn-primary' %>
+
+    </div>
+
+  </div>
+
+<% end %>

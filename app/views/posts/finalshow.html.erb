@@ -1,0 +1,69 @@
+<h1 class=" shadow-lg p-3 "  >Lost & Found Items</h1>
+
+
+
+<form class="d-flex" method="GET" action= "searchf">
+ <input class="form-control me-2" type="search" placeholder="Search for your lost or found items here.." aria-label ="Search" name ="query" >
+ <button class="btn btn-success" type="submit"> Search </button>
+
+</form> 
+</br>
+  
+
+
+
+<% @posts.each do |post| %>
+
+
+   <div
+class="bg-image"
+ style = "background-image: url('/assets/a.jpg');
+ height: 250px;
+ background-size:cover;"
+ 
+ >
+
+ <div class = "container"> 
+
+   <div class="card mb-3" style="max-width: 500px;">
+   <h5 class="card-header"><button type="button" class="btn btn-warning"><%=post.status %></button>
+  <%=post.title %>
+
+
+   </h5>
+   
+   
+
+   <div class="row no-gutters">
+  
+     <div class="col-md-4">
+       <%= image_tag(post.image, class:"card-img")  %>
+     </div>
+     <div class="col-md-8">
+     <div class="card-body">
+     <p> <%= post.name %></p>
+     <p> <%= post.nmail %> </p>
+
+   
+
+     <p> <%= post.body %></p>
+
+     <p  class="text-danger font-italic" > Posted on:  <%= post.date %></p>
+ 
+    
+
+     
+        
+
+     </div>
+       </div>
+      </div>
+     </div>
+   
+ </div>
+  
+ 
+
+   
+   
+   <% end %>
