@@ -1,26 +1,28 @@
 
 
-
-<h2><%= @post.title %></h2>
-
-
-<p><%= @post.name %></p>
-<p><%= @post.status %></p>
-<p><%= @post.body %></p>
-
-
+<div class="card" style="width: 20rem;">
+<div class="card" style="width: 10rem;">
 <%= image_tag(@post.image) %>
-
-
-
-<hr>
-
-
-
+</div>
+<div class="card-body">
+  <h5 class="card-title"><%= @post.title %> </h5>
+  <p class="card-text"><%= @post.body %></p>
+</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><%= @post.name %></li>
+  <li class="list-group-item"><%= @post.status %></li>
+  <li class="list-group-item"><%= @post.date %></li>
+</ul>
+<div class="card-body">
+  
 <%= button_to 'Delete Item', post_path(@post),
    method: :delete,
    data: {confirm: 'Are you sure ?'},
    :class =>'btn btn-danger' %>
+  
+</div>
+</div>
+
 
    
 

@@ -1,69 +1,96 @@
-<h1>Report Found Item</h1>
-
-<%= form_for :post, url:posts_path do |f| %>
-
-
-   <p>
-   <%= f.label :Item_Status %> <br>
-
-  
-
-   <%= f.text_field :status , :size=>"3", :value => ("Found") %>
-
-   
 
 
 
 
-<%= f.date_field :date, value: Date.today %>
-
-</p>
-
-    <p>
-       <%= f.label :Found_item  %> <br>
-       <%= f.text_field( :title, {:class => 'form-control'}) %>
-
-    
 
 
-   
-       <%= f.label :Contact_Name  %> <br>
-       <%= f.text_field( :name, {:class => 'form-control'}) %>
+
+
+
+<div class="card mb-3  " style="max-width: 10000px;">
+  <div class="row g-0">
+    <div class="col-md-4 ">
+      <br/><br/><br/>
+      <img src="/assets/found.png" class="img-fluid rounded-start" alt="...">
       
-
-   
-
-   
-       <%= f.label :NIT_Email  %> <br>
-       <%= f.text_field( :nmail, {:class => 'form-control'}) %>
-       
-
-    </p>
-
-   
-
-
-
-    <div class="f">
-           
-     <%= f.label :Image_of_item %>
-     <%= f.file_field :image %>
-
     </div>
+    <div class="col-md-8">
+      <div class="card-body  ">
+
+      <h1>Report Found Item</h1>
+        
+      <%= form_for :post, url:posts_path do |f| %>
 
 
+         <p>
+         <%= f.label :Item_Status %> <br>
+      
+        
+      
+         <%= f.text_field :status , :size=>"3", :value => ("Found") %>
+      
+         
+      
+      
+      
+      
+      <%= f.date_field :date, value: Date.today %>
+      
+      </p>
+      
+          <p>
+             <%= f.label :Found_item  %> <br>
+             <%= f.text_field( :title, {:class => 'form-control'}) %>
+      
+          
+      
+      
+         
+             <%= f.label :Contact_Name  %> <br>
+             <%= f.text_field( :name, {:class => 'form-control'}) %>
+            
+      
+         
+      
+         
+             <%= f.label :NIT_Email  %> <br>
+             <%= f.text_field( :nmail, {:class => 'form-control'}) %>
+             
+      
+          </p>
+      
+         
+      
+      
+      
+          <div class="f">
+                 
+           <%= f.label :Image_of_item %>
+           <%= f.file_field :image %>
+      
+          </div>
+      
+      
+      
+      
+          <p>
+             
+            <%= f.label :Contact_info_Or_Item_info %> <br>
+            <%= f.text_area( :body, {:class => 'form-control'}) %>
+      
+      
+          </p>
+      
+          <p>
+                <%= f.submit({ :class => 'btn btn-primary'}) %>
+          </p>
+      
+          <% end %>
 
 
-    <p>
-       
-      <%= f.label :Contact_info_Or_Item_info %> <br>
-      <%= f.text_area( :body, {:class => 'form-control'}) %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    </p>
-
-    <p>
-          <%= f.submit({ :class => 'btn btn-primary'}) %>
-    </p>
-
-    <% end %>
