@@ -36,6 +36,9 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" 
     aria-controls="navbar" aria-expanded="false">
    
+     # for minimization
+
+
     <span class="sr-only">Toggle navigataion </span>
           <span class ="icon-bar">hi</span>
           <span class ="icon-bar">hello</span>
@@ -58,7 +61,7 @@
   <% if user_signed_in? %>
 
    
-  <ul class ="nav navbar-nav">
+  <ul class ="nav navbar-nav">    #the first nav bar
 
      <li class="nav-item"><%= link_to " View page ", home_path,
      class: "nav-link" %></li>
@@ -178,7 +181,7 @@ background-position: center;"
     
 
        
- <%= yield %>
+ <%= yield %>                     
 
 </div>
 

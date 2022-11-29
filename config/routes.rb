@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-   
-  
    root "posts#finalshow", as:'home' 
 
    devise_scope :user do  
@@ -17,32 +15,12 @@ Rails.application.routes.draw do
  end
    resource :user # <= here
    
-   
-
-   
-
-  
-   
-
-
    get 'about' => 'pages#about',as: 'about'
-
-   
-
    get 'index' => 'posts#index',as: 'index'
-
    get 'admin_page' => 'pages#admin_page',as: 'admin_page'
-
    get '/search', to: "posts#search"
    get 'searchf', to:"posts#searchf"
-
-
    get "/send_mail" => "welcome#send_mail"
-
-  
-
-
-   
 
    resources :posts do
 
